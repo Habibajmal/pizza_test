@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "jquery" %>
+
   </head>
 
   <body>
+    <ul>
+    <li> <%= link_to "Home", orders_path %> </li>
+    <li> <%= link_to "Add New Pizza", new_pizza_path %> </ li>
+    <li> <%= link_to "Add New Size Price", new_price_setting_path %> </ li>
+
+    </ul>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>

@@ -1,0 +1,7 @@
+<div class="my-5" style="margin-bottom:10px;">
+  <%= f.label :ingredient_id, class: "mt-3" %>
+  <%= f.select :ingredient_id, Ingredient.all.map { |t| [t.ingredient_name, t.id]}, {}, class: "form-control" %>
+  <%= f.label :Status, class: "mt-3" %>
+  <%= f.select :status, options_for_select(ItemIngredient.statuses) %>    
+  <%= link_to_remove_association "Delete", f %>
+</div>

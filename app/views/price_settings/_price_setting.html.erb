@@ -1,0 +1,17 @@
+<div id="<%= dom_id price_setting %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Size:</strong>
+    <%= price_setting.size %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Price multipler:</strong>
+    <%= price_setting.price_multipler %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this price setting", price_setting, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this price setting', edit_price_setting_path(price_setting), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

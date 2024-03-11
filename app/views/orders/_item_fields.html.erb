@@ -1,0 +1,17 @@
+<h4> Item </h4>
+<div class="my-5" style="margin-bottom:10px">
+  <%= f.label :pizza_id, class: "mt-3" %>
+  <%= f.select :pizza_id, Pizza.all.map { |t| [t.title, t.id]}, {}, class: "form-control" %>
+    <%= f.label :price_id, class: "mt-3" %>
+  <%= f.select :price_id, PriceSetting.all.map { |t| [t.size, t.id]}, {}, class: "form-control" %>
+  <%= link_to_remove_association "Delete", f %>
+</div>
+ <div>
+    <p><strong>Ingredient:</strong></p>
+    <div class="ingredient">
+      <%= f.fields_for :item_ingredients do |item| %>
+        <%= render 'item_ingredient_fields', f: item %>
+      <% end %>
+    </div>
+  <%= link_to_add_association "Add Ingredient", f, :item_ingredients, data: {association_insertion_node: '.ingredient', association_insertion_method: :append} %>
+  </div>
